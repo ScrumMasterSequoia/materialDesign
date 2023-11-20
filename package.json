@@ -1,9 +1,12 @@
 {
   "dependencies": {
-    "@material/web": "^1.0.1"
+    "@material/web": "^1.0.1",
+    "tslib": "^2.6.2"
   },
   "scripts": {
-    "build": "rollup -c"
+    "start": "start",
+    "build": "rollup -c",
+    "rollup": "npx rollup -p @rollup/plugin-node-resolve index.js -o bundle.js"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
@@ -13,5 +16,11 @@
     "rollup": "^2.79.1",
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-summary": "^2.0.0"
-  }
+  },
+  "name": "materialdesign",
+  "description": "https://github.com/material-components/material-web/blob/main/docs/quick-start.md",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
