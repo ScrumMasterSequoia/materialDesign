@@ -20,7 +20,8 @@
       </md-icon-button>
     </div>  delete this when you fix this section -->
 
-<!-- from LoanMentorLLC index.html -->
+
+<!-- from LoanMentorLLC index.html will need the data-dropdown stuff to be put in bundle.js-->
 <div class="header">
     <div class="dropdown" data-dropdown>
         <button class="link" data-dropdown-button>Menu</button>
@@ -61,7 +62,7 @@
  -->
 
 
- 
+
 <!-- below is the implementation for a text field with a leading icon
 
  <md-outlined-text-field placeholder="Search for messages">
@@ -138,13 +139,21 @@
     <form id="submit-form" name="form" autocomplete="on">
       <label style="display: block;" class="label">Fill out the form below and we will reach out to you!</label> <br>
 
-      <md-outlined-text-field label="First and Last Name" type="text" required>
-      <label><input type="text" id="firstAndLastName" name="FirstName_LastName"> </input></label>
+      <md-outlined-text-field id="name" label="First and Last Name" type="text" > <!--required-->
+      <label for="name"><input type="text"> </input></label>
         </md-outlined-text-field>
       <br><br>
 
-      <md-outlined-text-field label="Email" type="email" required> 
-          <label><input type="email" id="emailAddress"  name="email"> </input></label>
+      <!-- <md-filled-text-field
+      label="Name"
+      required
+      supporting-text="*required"
+      error-text="Please fill out this field">
+  </md-filled-text-field> -->
+
+
+      <md-outlined-text-field id="email" label="Email" type="email" >  <!--required-->
+          <label for="email"><input type="email"> </input></label>
         </md-outlined-text-field>
       <br><br>
       

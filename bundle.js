@@ -26,11 +26,11 @@ loginForm.addEventListener("submit", (e) => {
 
 
     // debug the form to fix the <label><input> stuff
-    let name = document.getElementById("firstAndLastName").value;
-    let email = document.getElementById("emailAddress").value;
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
     let subscribed = document.querySelector('#subscribe-checkbox').checked;
     let selectHealthOptions = document.getElementById('select-health-options').value;
-    let allergySwitch = document.getElementById('allergy-switch').switched;
+    let allergySwitch = document.getElementById('allergy-switch').selected;
     
     console.log('name: = ', name);
     console.log('email: = ', email);
