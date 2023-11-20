@@ -3,186 +3,81 @@
     /* System tokens */
     --md-sys-color-primary: #060606;
     --md-sys-color-background: #e4f4dc;
-    --md-sys-color-on-primary: #e7e3e3;
+    --md-sys-color-on-primary: #ffffff;
     --md-sys-color-outline: #353636;
     --md-sys-color-surface-container-highest: #dde4e3;
     --md-sys-shadow-elevation-2dp: 0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12),0px 3px 1px -2px rgba(0,0,0,0.2);
+    --webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+    --moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+    --box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+    --border-radius: 1em;
+    --border-radius-circle: 100%;
+    --border-color: #4f4f4f;
+    --margin: 10px;
+    --padding: 10px;
+    --gap: 10px;
+
+    /* Component tokens */
+    --md-switch-handle-shape: 25px;
+    --md-switch-track-shape: 25px;
+    --md-outlined-text-field-container-shape: 45px;
+    --md-outlined-text-field-input-text-font: system-ui;
     --md-text-button-label-text-font: Times;
     --md-filled-select-text-field-container-shape: 5px;
     --md-filled-select-text-field-container-color: #f7faf9;
     --md-filled-select-text-field-input-text-color: #000000;
     --md-filled-select-text-field-input-text-font: system-ui;
-    --md-sys-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
-    --md-sys-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
-    --md-sys-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
-    --md-sys-border-radius: 1em;
-    --md-sys-border-radius-circle: 100%;
-    --md-sys-border-color: #4f4f4f;
-    --md-sys-margin: 10px;
-    --md-sys-padding: 10px;
-    --md-sys-gap: 10px;    
-    /* go through and remove my --md-sys markings from non-material-variables */
-
-
-    /* Component tokens */
-    --md-switch-handle-shape: 25px;
-    --md-switch-track-shape: 25px;
-    
-
-
-    --md-outlined-text-field-container-shape: 45px; 
-    --md-outlined-text-field-input-text-font: system-ui; 
 }
 .body{
-    background: #f7faf9;
+    background: var(--md-sys-color-on-primary);
 }
 
 .header{
-    text-align:center; 
+    text-align: center;
+    display: block;
     overflow: clip;
-}
-
-md-filled-select::part(menu) {
-    --md-menu-container-color: #f4fbfa;
-    --md-menu-container-shape: var(--md-sys-border-radius);
-} 
-/* test if this is neccessary ^ */
-
-
-
-/* from LoanMentorLLC default.css */
-.link{
-    background: var(--secondaryColor);
-    text-decoration: none;
-    color: var(--mainText);
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-    padding: 0.25rem;
-}
-.dropdown.active > .link,
-.link:hover{
-    color: var(--secondaryText);
-}
-.header{
-    background-color: var(--mainColor);
-    display: flex;
-    align-items: baseline;
-    /* padding: .5rem; */
-    gap: 0.5rem;
-    position: absolute;
-    top:0;
-}
-
-.dropdown{
-    position: fixed;
+    position: fixed; 
+    /* client might want header position switched to absolute/relative */
     top: 0;
-    background-color: var(--secondaryColor);
-    padding: 0.25rem;
-    border-radius: 0.1rem;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-}
-.dropdown-menu{
-    position: absolute;
-    left: 0;
-    top: calc(100%);
-    background-color: var(--secondaryColor);
-    padding: 0.25rem;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
 
-.dropdown.active > .link + .dropdown-menu {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
+/* dropdown select container for input form */
+md-filled-select::part(menu) { 
+    --md-menu-container-color: #f4fbfa;
+    --md-menu-container-shape: var(--border-radius);
+} 
 
-.information-grid {
-    display:grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 2rem;
-}
-
-.dropdown-heading{
-    color: var(--mainText);
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.dropdown-links{
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.material-symbols-outlined {
+.icons {
+    position: relative;
     cursor: pointer;
     font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
-    -webkit-box-shadow: var(--webkit-box-shadow);
-    -moz-box-shadow: var(--md-sys-moz-box-shadow);
-    box-shadow: var(--md-sys-box-shadow);
-    border-radius: var(--md-sys-border-radius-circle);
-    padding: var(--md-sys-padding);
+    border-radius: var(--border-radius-circle);
+    padding: var(--padding);
     z-index: 999;
-    background: #fff;
-    border: 1px solid var(--md-sys-border-color);
-    /*
-    keep working here to fix icons
-    */
+    background: var(--md-sys-color-on-primary);
+    border: 1px solid var(--border-color);
+    --webkit-box-shadow: var(--webkit-box-shadow);
+    -moz-box-shadow: var(--moz-box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
 .search-bar{
-    position: fixed; 
-    top: 5px;
-    right: 75px;  
+    position: relative; 
+    top: -6px;
+    right: -250px;  
     z-index: 990;
     width: 500px;
     background: #FFF;
-    -webkit-box-shadow: var(--webkit-box-shadow);
-    -moz-box-shadow: var(--md-sys-moz-box-shadow);
-    box-shadow: var(--md-sys-box-shadow);
+    --webkit-box-shadow: var(--webkit-box-shadow);
+    -moz-box-shadow: var(--moz-box-shadow);
+    box-shadow: var(--box-shadow);
     border-radius: 45px;
-    
+    text-align: left;
 }
-.menu-button{
-    background: none;
-    border-radius: var(--md-sys-border-radius-circle);
-    position: fixed;
-    top: 10px;
-    left: 20px;
-    z-index: 998;
+input:focus::placeholder {
+        color: transparent;
+      
 }
-/* .menu-icon{
-    border-radius: var(--md-sys-border-radius-circle);
-    position: relative;
-} */
 .search-button{
     position: fixed;
     right: 80px;
@@ -190,24 +85,32 @@ md-filled-select::part(menu) {
 }
 /* dynamically open the search bar when the search icon is clicked */
 
+.menu-button{
+    background: none;
+    border-radius: var(--border-radius-circle);
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 998;
+}
+
 .notification-button-unread{
     position: fixed;
     top: 10px;
     right: 20px;
     background: none;
-    border-radius: var(--md-sys-border-radius-circle);
-
+    border-radius: var(--border-radius-circle);
 }
+
 /* .notification-icon{
-    border-radius: var(--md-sys-border-radius-circle);
+    border-radius: var(--border-radius-circle);
     position: relative;
 } */
+
 .notification-button{
     position: fixed;
     background: #FFF;
     border-radius: 45px;
-
-    /* when there are no unread notifications. really we should just change icons to the other here instead of changing classes */
 }
 
 .h3 {
@@ -221,16 +124,16 @@ md-filled-select::part(menu) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    -webkit-box-shadow: var(--md-sys-webkit-box-shadow);
-    -moz-box-shadow: var(--md-sys-moz-box-shadow);
-    box-shadow: var(--md-sys-box-shadow);
-
+    --webkit-box-shadow: var(--webkit-box-shadow);
+    -moz-box-shadow: var(--moz-box-shadow);
+    box-shadow: var(--box-shadow);
     border: 1px solid var(--borderColor);
-    border-radius: var(--md-sys-border-radius);
+    border-radius: var(--border-radius);
 }
+
 .post-wrapper{
     background-color: var(--md-sys-color-background);
-    border-radius: var(--md-sys-border-radius);
+    border-radius: var(--border-radius);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
@@ -239,14 +142,15 @@ md-filled-select::part(menu) {
 
 .post{
     margin-top: 10px;
-    border-radius: var(--md-sys-border-radius);
+    border-radius: var(--border-radius);
     border: 5px solid var(--borderColor);
     margin: 5px;
-    gap: var(--md-sys-gap);
-    -webkit-box-shadow: var(--md-sys-webkit-box-shadow);
-    -moz-box-shadow: var(--md-sys-moz-box-shadow);
-    box-shadow: var(--md-sys-box-shadow);
+    gap: var(--gap);
+    --webkit-box-shadow: var(--webkit-box-shadow);
+    -moz-box-shadow: var(--moz-box-shadow);
+    box-shadow: var(--box-shadow);
 }
+
 .post img{
     border-radius: 15px 15px 0px 0px;
 }
@@ -257,16 +161,18 @@ md-filled-select::part(menu) {
     height: 180px;
     object-fit: cover;
 }
+
 .post-preview{
     background-color: var(--md-sys-color-on-primary);
     padding: 15px;
     border-radius: 0px 0px 15px 15px;
-
 }
+
 .post-title{
     color:#000;
     margin:0
 }
+
 .post-intro{
     color: #4b5156;
     font-size: 14px;
@@ -284,25 +190,24 @@ md-filled-select::part(menu) {
 }
 
 #submit-form {
-    border-radius: var(--md-sys-border-radius);
+    border-radius: var(--border-radius);
     background-color: var(--md-sys-color-background);
     text-align: center;
     margin-top: 10px;
     padding: 10px;
-    -webkit-box-shadow: var(--md-sys-webkit-box-shadow);
-    -moz-box-shadow: var(--md-sys-moz-box-shadow);
-    box-shadow: var(--md-sys-box-shadow);
+    --webkit-box-shadow: var(--webkit-box-shadow);
+    -moz-box-shadow: var(--moz-box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
 #allergen-switch {
-    border-radius: var(--md-sys-border-radius);
+    border-radius: var(--border-radius);
 }
 
 @media screen and (max-width: 1200px){
-    .body{
-        width: 95%;
-    }
+    /* full screen mode */
 }
+
 @media screen and (max-width: 400px){
     .search-bar{
         right: 0px;

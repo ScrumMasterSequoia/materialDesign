@@ -11,64 +11,29 @@
   <body class="body">
 
 
-<!-- 
+
     <div class="header">
-      <md-icon-button" class="menu-button" onclick="handleMenuPressed()" type="pointer" >
-        <md-icon class="material-symbols-outlined">
+
+      <md-icon-button" class="menu-button" id="menu-button" type="pointer" >
+        <md-icon class="icons">
           menu
         </md-icon>
       </md-icon-button>
-    </div>  delete this when you fix this section -->
 
+      <md-outlined-text-field class="search-bar" id="search-bar" type="search" name="search" label="search"></md-outlined-text-field>
+      <md-icon-button" slot="trailing-icon" class="search-button" type="submit" >
+        <md-icon class="icons">
+          search
+        </md-icon>
+      </md-icon-button>
 
-<!-- from LoanMentorLLC index.html will need the data-dropdown stuff to be put in bundle.js-->
-<div class="header">
-    <div class="dropdown" data-dropdown>
-        <button class="link" data-dropdown-button>Menu</button>
-        
-        <div class="dropdown-menu information-grid">
-            <div>
-                <div class="dropdown-heading">Companies</div>
-                <div class="dropdown-links">
-                    <a href="#CLD-tag" class="link">Commercial Loan Direct</a>
-                    <a href="#OnDeck-tag" class="link">OnDeck</a>
-                    <a href="#NBC-tag" class="link">National Business Capital</a>
-                    <a href="#UpStart-tag" class="link">UpStart</a>
-                </div>
-            </div>
-        </div>
-      </div>
-    </div> 
-
-
-
-
-<!-- 
-
-      <md-outlined-text-field class="search-bar" type="search" name="search" required></md-outlined-text-field>
-        <md-icon-button" class="search-button" onclick="handleSearch()" type="submit" >
-          <md-icon class="material-symbols-outlined">
-            search
-          </md-icon>
-        </md-icon-button>
-      <md-icon-button" class="notification-button-unread" onclick="handleBell()" type="pointer" >
-        <md-icon class="material-symbols-outlined">
+      <md-icon-button" class="notification-button-unread" type="pointer" >
+        <md-icon class="icons">
           notifications_unread
         </md-icon>
       </md-icon-button>
-       must dynamiclly change the class for notifications based on whether or not there is an UNREAD notification ^ 
-      class="notification-button"
-    </div>
- -->
-
-
-
-<!-- below is the implementation for a text field with a leading icon
-
- <md-outlined-text-field placeholder="Search for messages">
-  <md-icon slot="leading-icon">search</md-icon>
-</md-outlined-text-field> -->
-
+  
+    </div>  
 
 
 
@@ -81,10 +46,7 @@
     <!-- bell notification icon : we need to dynamically set the icon based on new notifications -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-
     <br><br><br><br>
-
-  
 
     <div class="featured-content-container">
         <label class="label" style="text-align: center;">Featured</label>
@@ -112,26 +74,27 @@
             </div>
 
             <div>
-              <div class="post">
-                  <img class="thumbnail" src="https://suppliment-app-bucket.s3.amazonaws.com/suppliment-art.png">
-                  <div class="post-preview">
-                      <h6 class="post-title">Vitamin B12</h6>
-                      <p class="post-intro">Helps keep nerve and blood cells healthy, make DNA and prevent anemia</p>
-                      <md-outlined-button href="#">Learn More</md-outlined-button>
-                  </div>
-              </div>
-          </div>
-
-          <div>
-              <div class="post">
-                  <img class="thumbnail" src="https://suppliment-app-bucket.s3.amazonaws.com/suppliment-art.png">
-                  <div class="post-preview">
-                      <h6 class="post-title">Fish Oil</h6>
-                      <p class="post-intro">Omega-3 fatty acids are vital to your heart and brain health</p>
-                      <md-outlined-button href="#">Learn More</md-outlined-button>
+                <div class="post">
+                    <img class="thumbnail" src="https://suppliment-app-bucket.s3.amazonaws.com/suppliment-art.png">
+                    <div class="post-preview">
+                        <h6 class="post-title">Vitamin B12</h6>
+                        <p class="post-intro">Helps keep nerve and blood cells healthy, make DNA and prevent anemia</p>
+                        <md-outlined-button href="#">Learn More</md-outlined-button>
                     </div>
-              </div>
-          </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="post">
+                    <img class="thumbnail" src="https://suppliment-app-bucket.s3.amazonaws.com/suppliment-art.png">
+                    <div class="post-preview">
+                        <h6 class="post-title">Fish Oil</h6>
+                        <p class="post-intro">Omega-3 fatty acids are vital to your heart and brain health</p>
+                        <md-outlined-button href="#">Learn More</md-outlined-button>
+                      </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -139,70 +102,50 @@
     <form id="submit-form" name="form" autocomplete="on">
       <label style="display: block;" class="label">Fill out the form below and we will reach out to you!</label> <br>
 
-      <md-outlined-text-field id="name" label="First and Last Name" type="text" > <!--required-->
-      <label for="name"><input type="text"> </input></label>
-        </md-outlined-text-field>
+      <md-outlined-text-field id="name" label="First and Last Name" type="text" required> 
+        <label for="name"><input type="text"> </input></label>
+      </md-outlined-text-field>
       <br><br>
 
-      <!-- <md-filled-text-field
-      label="Name"
-      required
-      supporting-text="*required"
-      error-text="Please fill out this field">
-  </md-filled-text-field> -->
-
-
-      <md-outlined-text-field id="email" label="Email" type="email" >  <!--required-->
+      <md-outlined-text-field id="email" label="Email" type="email" required>  
           <label for="email"><input type="email"> </input></label>
-        </md-outlined-text-field>
+      </md-outlined-text-field>
       <br><br>
       
-      <!-- the id field doen't work for some reason -->
-      <!-- the above might not work due to the conflict between the md-outlined-text-field and the input tags -->
-      
-        <md-checkbox id="subscribe-checkbox" name="subscribe"><input type="" id="" name="" value=""> </input></md-checkbox>
-        <label for="subscribe-checkbox"> Subscribe </label>
+      <md-checkbox id="subscribe-checkbox" name="subscribe"><input type="" id="" name="" value=""> </input></md-checkbox>
+      <label for="subscribe-checkbox"> Subscribe </label>
       
       <br><br>
   
       <label for="select-health-options">What type of nutrition are you most interested in?</label> <br><br>
-        <md-filled-select id="select-health-options">
-          <md-select-option selected value="Heart">
-            <div slot="headline">Heart</div>
-          </md-select-option>
-          <md-select-option value="Brain">
-            <div slot="headline">Brain</div>
-          </md-select-option>
-          <md-select-option value="Skin and Hair">
-            <div slot="headline">Skin and Hair</div>
-          </md-select-option>
-          <md-select-option value="Digestive">
-            <div slot="headline">Digestive</div>
-          </md-select-option>
-          <md-select-option value="Immune System">
-            <div slot="headline">Immune System</div>
-          </md-select-option>
-        </md-filled-select>
-        <br><br>
+      <md-filled-select id="select-health-options">
+        <md-select-option selected value="Heart">
+          <div slot="headline">Heart</div>
+        </md-select-option>
+        <md-select-option value="Brain">
+          <div slot="headline">Brain</div>
+        </md-select-option>
+        <md-select-option value="Skin and Hair">
+          <div slot="headline">Skin and Hair</div>
+        </md-select-option>
+        <md-select-option value="Digestive">
+          <div slot="headline">Digestive</div>
+        </md-select-option>
+        <md-select-option value="Immune System">
+          <div slot="headline">Immune System</div>
+        </md-select-option>
+      </md-filled-select>
+      <br><br>
   
-        <label for="allergy-switch">Do you have any significant allergies?</label> <br> <br>
-        <label>no / yes</label> <br>
-        <md-switch id="allergy-switch"></md-switch>
-        <br><br>
-  
-        <md-text-button style="padding-top: 0.6em;" type="reset">Reset</md-text-button>
-        <md-outlined-button style="padding-top: 0.6em;" type="submit">Submit</md-outlined-button>
-  
-      </form>
+      <label for="allergy-switch">Do you have any significant allergies?</label> <br> <br>
+      <label>no / yes</label> <br>
+      <md-switch id="allergy-switch"></md-switch>
+      <br><br>
 
+      <md-text-button style="padding-top: 0.6em;" type="reset">Reset</md-text-button>
+      <md-outlined-button style="padding-top: 0.6em;" type="submit">Submit</md-outlined-button>
 
-
-    <script>
-    function handleSubmit(onsubmit) {
-      alert("The form was submitted. Check the console for the form data.");
-      console.log(document.getElementById("submit-form").elements);
-    }
-    </script>
+    </form>
 
   </body>
 
