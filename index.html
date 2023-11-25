@@ -14,24 +14,45 @@
 
     <div class="header">
 
-      <md-icon-button" class="menu-button" id="menu-button" type="pointer" >
-        <md-icon class="icons">
-          menu
-        </md-icon>
-      </md-icon-button>
 
-      <md-outlined-text-field class="search-bar" id="search-bar" type="search" name="search" label="search"></md-outlined-text-field>
-      <md-icon-button" slot="trailing-icon" class="search-button" type="submit" >
-        <md-icon class="icons">
-          search
-        </md-icon>
-      </md-icon-button>
+      <span style="position: absolute;">
+        
+        
+          <md-filled-button class="menu-button" id="usage-popover-anchor">
+            <md-icon style="display: block;">
+              menu
+            </md-icon>
+          </md-filled--button>
+        
+        
+      <md-menu positioning="popover" id="usage-popover" anchor="usage-popover-anchor">
+        <md-menu-item positioning="popover">
+          <md-text-button slot="headline">About Us</md-text-button>
+        </md-menu-item>
+        <md-menu-item positioning="popover">
+          <md-text-button slot="headline">Catalog</md-text-button>
+        </md-menu-item>
+        <md-menu-item positioning="popover">
+          <md-text-button slot="headline">Contact Us</md-text-button>
+        </md-menu-item>
+      </md-menu>
+    </span>
+      
+      <!-- <md-outlined-text-field class="logo" id="logo" type="text" name="logo" label="Suppliment App"></md-outlined-text-field> -->
 
-      <md-icon-button" class="notification-button-unread" type="pointer" >
-        <md-icon class="icons">
+      <md-filled-text-field class="search-bar" id="search-bar" type="search" name="search" label="search"></md-filled-text-field>
+        <!-- <md-filled-button class="search-button" type="submit" >
+          <md-icon class="icons">
+            search
+          </md-icon>
+        </md-filled-button> -->
+      
+
+      <md-filled-button class="notification-button" type="pointer" >
+        <md-icon>
           notifications_unread
         </md-icon>
-      </md-icon-button>
+      </md-filled-button>
   
     </div>  
 
@@ -57,7 +78,7 @@
                     <div class="post-preview">
                         <h6 class="post-title">Vitamin B12</h6>
                         <p class="post-intro">Helps keep nerve and blood cells healthy, make DNA and prevent anemia</p>
-                        <md-outlined-button href="#">Learn More</md-outlined-button>
+                        <button class="post-button" href="#">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -68,7 +89,7 @@
                     <div class="post-preview">
                         <h6 class="post-title">Fish Oil</h6>
                         <p class="post-intro">Omega-3 fatty acids are vital to your heart and brain health</p>
-                        <md-outlined-button href="#">Learn More</md-outlined-button>
+                        <button class="post-button" href="#">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -79,7 +100,7 @@
                     <div class="post-preview">
                         <h6 class="post-title">Vitamin B12</h6>
                         <p class="post-intro">Helps keep nerve and blood cells healthy, make DNA and prevent anemia</p>
-                        <md-outlined-button href="#">Learn More</md-outlined-button>
+                        <button class="post-button" href="#">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -90,7 +111,7 @@
                     <div class="post-preview">
                         <h6 class="post-title">Fish Oil</h6>
                         <p class="post-intro">Omega-3 fatty acids are vital to your heart and brain health</p>
-                        <md-outlined-button href="#">Learn More</md-outlined-button>
+                        <button class="post-button" href="#">Learn More</button>
                       </div>
                 </div>
             </div>
@@ -143,12 +164,13 @@
       <br><br>
 
       <md-text-button style="padding-top: 0.6em;" type="reset">Reset</md-text-button>
-      <md-outlined-button style="padding-top: 0.6em;" type="submit">Submit</md-outlined-button>
+      <md-outlined-button  style="padding-top: 0.6em;" type="submit">Submit</md-outlined-button>
 
     </form>
 
   </body>
 
   <script src="./bundle.js"></script>
+
 
 </html>

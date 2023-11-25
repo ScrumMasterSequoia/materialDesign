@@ -1,51 +1,103 @@
 
 :root {
     /* System tokens */
-    --md-sys-color-primary: #060606;
+    --md-sys-color-primary: #ffffff;
     --md-sys-color-background: #e4f4dc;
-    --md-sys-color-on-primary: #ffffff;
-    --md-sys-color-outline: #353636;
-    --md-sys-color-surface-container-highest: #dde4e3;
+    --md-sys-color-on-primary: #000000;
+    --md-sys-color-outline: #000000;
+    --md-sys-color-surface-container-highest: #ffffff;
     --md-sys-shadow-elevation-2dp: 0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12),0px 3px 1px -2px rgba(0,0,0,0.2);
-    --webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
-    --moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
-    --box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+    
+
+    /* Component tokens */
+    
+    --md-switch-handle-shape: 25px;
+    --md-switch-track-shape: 25px;
+    --md-switch-selected-handle-color: #000000;
+    --md-switch-selected-hover-handle-color: #000000;
+    --md-switch-selected-focus-handle-color: #000000;
+
+    --md-filled-button-container-color: #ffffff;
+    --md-filled-button-container-shadow-color: rgba(0,0,0,0);
+
+    --md-outlined-icon-button-container-color: #000000;
+    --md-outlined-icon-button-outline-color: #000000;
+    --md-outlined-icon-button-container-shape: 45px;
+   
+    --md-outlined-text-field-container-shape: 45px;
+    --md-outlined-text-field-input-text-font: system-ui;
+    --md-outlined-text-field-input-text-color: #000000;
+    --md-outlined-text-field-focus-label-text-color: #000000;
+    --md-outlined-text-field-hover-label-text-color: #000000;
+    --md-outlined-text-field-focus-outline-color: #000000;
+    
+    --md-outlined-button-text-color: #000000;
+    --md-outlined-button-label-text-color: #434343;
+    --md-outlined-button-hover-label-text-color: var(--hover-color);
+    --md-outlined-button-focus-label-text-color: #000000;
+    --md-outlined-button-pressed-label-text-color: var(--pressed-color);
+    
+    --md-text-button-label-text-font: Times;
+    --md-text-button-label-text-color: #000000;
+    --md-text-button-hover-label-text-color: #000000;
+    --md-text-button-focus-label-text-color: #000000;
+    --md-text-button-pressed-label-text-color: var(--pressed-color);
+    
+    --md-filled-select-text-field-container-shape: 5px;
+    --md-filled-select-text-field-container-color: #f7faf9;
+    --md-filled-select-text-field-input-text-color: #000000;
+    --md-filled-select-text-field-input-text-font: system-ui;
+
+    --md-filled-text-field-container-shape: 45px;
+    --md-filled-text-field-label-text-color: #9c9c9c;
+    --md-filled-text-field-input-text-color: #000000;
+    --md-filled-text-field-color-primary: #000000;
+    --md-filled-text-field-active-indicator-color: rgba(0,0,0,0);
+    --md-filled-text-field-hover-active-indicator-color: rgba(0,0,0,0);
+    --md-filled-text-field-focus-active-indicator-color: rgba(0,0,0,0);
+    --md-filled-text-field-focus-label-text-color: #000000;
+    --md-filled-text-field-focus-caret-color: #000000;
+
+
+
+    /* non-token variables */
+    --webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
+    --moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
+    --box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
     --border-radius: 1em;
+    --border-radius-button: 50px;
     --border-radius-circle: 100%;
     --border-color: #4f4f4f;
     --margin: 10px;
     --padding: 10px;
     --gap: 10px;
-
-    /* Component tokens */
-    --md-switch-handle-shape: 25px;
-    --md-switch-track-shape: 25px;
-    --md-outlined-text-field-container-shape: 45px;
-    --md-outlined-text-field-input-text-font: system-ui;
-    --md-text-button-label-text-font: Times;
-    --md-filled-select-text-field-container-shape: 5px;
-    --md-filled-select-text-field-container-color: #f7faf9;
-    --md-filled-select-text-field-input-text-color: #000000;
-    --md-filled-select-text-field-input-text-font: system-ui;
+    --hover-color: #606060;
+    --pressed-color: #777777;
 }
 .body{
-    background: var(--md-sys-color-on-primary);
+    background: var(--md-sys-color-background);
 }
 
 .header{
     text-align: center;
     display: block;
-    overflow: clip;
-    position: fixed; 
+    position: fixed;
     /* client might want header position switched to absolute/relative */
-    top: 0;
+    top: 5px;
 }
 
 /* dropdown select container for input form */
 md-filled-select::part(menu) { 
-    --md-menu-container-color: #f4fbfa;
+    --md-menu-container-color: var(--md-sys-color-primary);
     --md-menu-container-shape: var(--border-radius);
 } 
+
+/* .shadow{
+    border-radius: var(--border-radius-button);
+    --webkit-box-shadow: var(--webkit-box-shadow);
+    -moz-box-shadow: var(--moz-box-shadow);
+    box-shadow: var(--box-shadow);
+} */
 
 .icons {
     position: relative;
@@ -54,20 +106,18 @@ md-filled-select::part(menu) {
     border-radius: var(--border-radius-circle);
     padding: var(--padding);
     z-index: 999;
-    background: var(--md-sys-color-on-primary);
-    border: 1px solid var(--border-color);
+    background: var(--md-sys-color-primary);
     --webkit-box-shadow: var(--webkit-box-shadow);
     -moz-box-shadow: var(--moz-box-shadow);
     box-shadow: var(--box-shadow);
 }
 
+
 .search-bar{
-    position: relative; 
-    top: -6px;
-    right: -250px;  
+    position: fixed; 
+    right: 80px;  
     z-index: 990;
-    width: 500px;
-    background: #FFF;
+    width: 400px;
     --webkit-box-shadow: var(--webkit-box-shadow);
     -moz-box-shadow: var(--moz-box-shadow);
     box-shadow: var(--box-shadow);
@@ -78,28 +128,38 @@ input:focus::placeholder {
         color: transparent;
       
 }
-.search-button{
-    position: fixed;
-    right: 80px;
+/* .search-button{
+    position: relative;
+    right: -75px;
+    top: 8px;
     z-index: 998;
-}
+    width: 0px;
+} */
 /* dynamically open the search bar when the search icon is clicked */
 
 .menu-button{
     background: none;
-    border-radius: var(--border-radius-circle);
     position: fixed;
-    top: 10px;
-    left: 20px;
+    top: 12px;
+    left: 10px;
     z-index: 998;
+    border-radius: var(--border-radius-button);
+    --webkit-box-shadow: var(--webkit-box-shadow);
+    -moz-box-shadow: var(--moz-box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
-.notification-button-unread{
+.notification-button{ 
+    z-index: 998;
+    width: 65px;
     position: fixed;
-    top: 10px;
-    right: 20px;
+    top: 12px;
+    right: 10px;
     background: none;
-    border-radius: var(--border-radius-circle);
+    border-radius: var(--border-radius-button);
+    --webkit-box-shadow: var(--webkit-box-shadow);
+    -moz-box-shadow: var(--moz-box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
 /* .notification-icon{
@@ -107,11 +167,6 @@ input:focus::placeholder {
     position: relative;
 } */
 
-.notification-button{
-    position: fixed;
-    background: #FFF;
-    border-radius: 45px;
-}
 
 .h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -163,7 +218,7 @@ input:focus::placeholder {
 }
 
 .post-preview{
-    background-color: var(--md-sys-color-on-primary);
+    background-color: var(--md-sys-color-primary);
     padding: 15px;
     border-radius: 0px 0px 15px 15px;
 }
@@ -177,6 +232,29 @@ input:focus::placeholder {
     color: #4b5156;
     font-size: 14px;
 }
+.post-button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:small;
+    background-color: var(--md-sys-color-primary);
+    border-radius: 50px;
+    padding: 12px 22px 12px 22px;
+    border: 1px solid black;
+
+}
+.post-button:hover{
+    background-color: #ededed;
+    color: #000000;
+}
+.post-button:active{
+    background-color: #c5c5c5;
+    color: #000000;
+
+  transition-duration: 0.1;
+
+}
+
+
+
 
 .label {
     font-family: var(--md-text-button-label-text-font);
@@ -203,6 +281,9 @@ input:focus::placeholder {
 #allergen-switch {
     border-radius: var(--border-radius);
 }
+.switch {
+    background-color: red;
+}
 
 @media screen and (max-width: 1200px){
     /* full screen mode */
@@ -210,21 +291,20 @@ input:focus::placeholder {
 
 @media screen and (max-width: 400px){
     .search-bar{
-        right: 0px;
         top: 5px;
-        left: 110px;  
+        left: 90px;  
     }
     .menu-button{
-        top: 10px;
-        left: 10px;
+        top: 12px;
+        left: 5px;
     }
-    .search-button{
+    /* .search-button{
         top:10px; 
         right: 70px; 
-    }
-    .notification-button-unread{
-        top: 10px;
-        right: 10px;
+    } */
+    .notification-button{
+        top: 12px;
+        right: 5px;
     }
     .post-wrapper{
         grid-template-columns: 1fr 1fr;
