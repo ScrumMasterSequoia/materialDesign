@@ -8,9 +8,7 @@
     --md-sys-color-surface-container-highest: #ffffff;
     --md-sys-shadow-elevation-2dp: 0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12),0px 3px 1px -2px rgba(0,0,0,0.2);
     
-
-    /* Component tokens */
-    
+    /* Component tokens */ 
     --md-switch-handle-shape: 25px;
     --md-switch-track-shape: 25px;
     --md-switch-selected-handle-color: #000000;
@@ -58,8 +56,6 @@
     --md-filled-text-field-focus-label-text-color: #000000;
     --md-filled-text-field-focus-caret-color: #000000;
 
-
-
     /* non-token variables */
     --webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
     --moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
@@ -92,13 +88,6 @@ md-filled-select::part(menu) {
     --md-menu-container-shape: var(--border-radius);
 } 
 
-/* .shadow{
-    border-radius: var(--border-radius-button);
-    --webkit-box-shadow: var(--webkit-box-shadow);
-    -moz-box-shadow: var(--moz-box-shadow);
-    box-shadow: var(--box-shadow);
-} */
-
 .icons {
     position: relative;
     cursor: pointer;
@@ -112,12 +101,11 @@ md-filled-select::part(menu) {
     box-shadow: var(--box-shadow);
 }
 
-
 .search-bar{
     position: fixed; 
     right: 80px;  
     z-index: 990;
-    width: 400px;
+    width: 300px;
     --webkit-box-shadow: var(--webkit-box-shadow);
     -moz-box-shadow: var(--moz-box-shadow);
     box-shadow: var(--box-shadow);
@@ -161,12 +149,6 @@ input:focus::placeholder {
     -moz-box-shadow: var(--moz-box-shadow);
     box-shadow: var(--box-shadow);
 }
-
-/* .notification-icon{
-    border-radius: var(--border-radius-circle);
-    position: relative;
-} */
-
 
 .h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -248,13 +230,8 @@ input:focus::placeholder {
 .post-button:active{
     background-color: #c5c5c5;
     color: #000000;
-
-  transition-duration: 0.1;
-
+    transition-duration: 0.1;
 }
-
-
-
 
 .label {
     font-family: var(--md-text-button-label-text-font);
@@ -286,7 +263,7 @@ input:focus::placeholder {
 }
 
 @media screen and (max-width: 1200px){
-    /* full screen mode */
+    /* full screen mode is default*/
 }
 
 @media screen and (max-width: 400px){

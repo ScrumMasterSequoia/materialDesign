@@ -1,9 +1,11 @@
+// code in this file can be added to the bundle.js file after the command 
+// rollup, to add this functionality. This is merely a placeholder file, because 
+// this code gets deleted from the bundle.js file after the command rollup.
+
 let loginForm = document.getElementById('submit-form');
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-
-    // debug the form to fix the <label><input> stuff
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let subscribed = document.querySelector('#subscribe-checkbox').checked;
@@ -19,10 +21,5 @@ loginForm.addEventListener("submit", (e) => {
 
   const anchorEl = document.body.querySelector('#usage-popover-anchor');
   const menuEl = document.body.querySelector('#usage-popover');
-//   const anchorEl = document.body.querySelector('#usage-anchor');
-//   const menuEl = document.body.querySelector('#usage-menu');
 
   anchorEl.addEventListener('click', () => { menuEl.open = !menuEl.open; });
-
-
-

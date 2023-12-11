@@ -12,4 +12,3 @@ import '@material/web/iconbutton/icon-button.js';
 import '@material/web/button/elevated-button.js';
 
 // after adding an import DON'T FORGET TO RUN THE ROLLUP SCRIPT
-
