@@ -1,5 +1,7 @@
 
 :root {
+    padding: env(SAFE-AREA-INSET-TOP, 10px) env(SAFE-AREA-INSET-RIGHT, 10px) env(SAFE-AREA-INSET-BOTTOM, 10px) env(SAFE-AREA-INSET-LEFT, 10px);
+    
     /* System tokens */
     --md-sys-color-primary: #ffffff;
     --md-sys-color-background: #e4f4dc;
@@ -15,8 +17,12 @@
     --md-switch-selected-hover-handle-color: #000000;
     --md-switch-selected-focus-handle-color: #000000;
 
-    --md-filled-button-container-color: #ffffff;
+    /* menu and notifications buttons */
+    --md-filled-button-container-color: #ffffffe0;
     --md-filled-button-container-shadow-color: rgba(0,0,0,0);
+
+    /* menu dropdown items background transparent*/
+    --md-menu-container-color: #ffffffe0;
 
     --md-outlined-icon-button-container-color: #000000;
     --md-outlined-icon-button-outline-color: #000000;
@@ -42,11 +48,12 @@
     --md-text-button-pressed-label-text-color: var(--pressed-color);
     
     --md-filled-select-text-field-container-shape: 5px;
-    --md-filled-select-text-field-container-color: #f7faf9;
+    --md-filled-select-text-field-container-color: #faf7f7;     
     --md-filled-select-text-field-input-text-color: #000000;
     --md-filled-select-text-field-input-text-font: system-ui;
 
     --md-filled-text-field-container-shape: 45px;
+    --md-filled-text-field-container-color: #ffffffe0;  /* search bar backaground transparent */
     --md-filled-text-field-label-text-color: #9c9c9c;
     --md-filled-text-field-input-text-color: #000000;
     --md-filled-text-field-color-primary: #000000;
@@ -75,11 +82,15 @@
 }
 
 .header{
+
     text-align: center;
     display: block;
     position: fixed;
     /* client might want header position switched to absolute/relative */
-    top: 5px;
+    top: 20px;
+    right: 20px;
+    left: 10px;
+    /* safe-area-inset-bottom: 20px; */
 }
 
 /* dropdown select container for input form */
@@ -95,7 +106,7 @@ md-filled-select::part(menu) {
     border-radius: var(--border-radius-circle);
     padding: var(--padding);
     z-index: 999;
-    opacity: 0.1; 
+    /* opacity: 0.1;  */
     /* added opacity above */
     background: var(--md-sys-color-primary);
     --webkit-box-shadow: var(--webkit-box-shadow);
@@ -105,7 +116,7 @@ md-filled-select::part(menu) {
 
 .search-bar{
     position: fixed; 
-    right: 80px;  
+    right: 85px;  
     z-index: 990;
     width: 300px;
     --webkit-box-shadow: var(--webkit-box-shadow);
@@ -118,20 +129,12 @@ input:focus::placeholder {
         color: transparent;
       
 }
-/* .search-button{
-    position: relative;
-    right: -75px;
-    top: 8px;
-    z-index: 998;
-    width: 0px;
-} */
-/* dynamically open the search bar when the search icon is clicked */
 
 .menu-button{
     background: none;
     position: fixed;
-    top: 12px;
-    left: 10px;
+    top: 27px;
+    left: 17px;
     z-index: 998;
     border-radius: var(--border-radius-button);
     --webkit-box-shadow: var(--webkit-box-shadow);
@@ -143,8 +146,8 @@ input:focus::placeholder {
     z-index: 998;
     width: 65px;
     position: fixed;
-    top: 12px;
-    right: 10px;
+    top: 27px;
+    right: 17px;
     background: none;
     border-radius: var(--border-radius-button);
     --webkit-box-shadow: var(--webkit-box-shadow);
@@ -297,3 +300,12 @@ input:focus::placeholder {
         right: -10px;
     }   
 }
+
+/* .search-button{
+    position: relative;
+    right: -75px;
+    top: 8px;
+    z-index: 998;
+    width: 0px;
+} */
+/* dynamically open the search bar when the search icon is clicked */
