@@ -95,6 +95,8 @@ md-filled-select::part(menu) {
     border-radius: var(--border-radius-circle);
     padding: var(--padding);
     z-index: 999;
+    opacity: 0.1; 
+    /* added opacity above */
     background: var(--md-sys-color-primary);
     --webkit-box-shadow: var(--webkit-box-shadow);
     -moz-box-shadow: var(--moz-box-shadow);
