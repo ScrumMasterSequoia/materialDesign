@@ -276,7 +276,7 @@ input:focus::placeholder {
     full screen mode is default
 } */
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 550px){
     .search-bar{
         top: 5px;
         left: 90px;  
