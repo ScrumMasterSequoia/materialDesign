@@ -184,7 +184,6 @@ input:focus::placeholder {
     border-radius: var(--border-radius);
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns in desktop view */
-    gap: 1rem; 
 }
 
 .post{

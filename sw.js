@@ -6,12 +6,15 @@ self.addEventListener('install', e => {
             caches.open('static').then(cache => {
                 return cache.addAll([
                     './',
+                    './bundle.js',
+                    './favicon.ico',
                     './default.css',
                     './index.html',
                     './img/icon152.png',
                     './img/icon192.png',
                     './img/icon384.png',
-                    './img/icon512.png'
+                    './img/icon512.png',
+                    './img/supplement-art.png',
                 ]);
             })
         )

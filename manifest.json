@@ -3,31 +3,47 @@
     "short_name": "App",
     "display": "standalone",
     "start_url": ".",
+    "id": "/",
     "icons": [
-      {
-        "src": "/img/icon152.png",
-        "sizes": "152x152",
-        "type": "image/png",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "/img/icon192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/img/icon384.png",
-        "sizes": "384x384",
-        "type": "image/png"
-      },
-      {
-        "src": "/img/icon512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
+        {
+            "src": "/img/icon152.png",
+            "sizes": "152x152",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/img/icon192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/icon384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
     ],
     "orientation": "portrait-primary",
-    "theme_color": "#bada55",
-    "background_color": "#eeeeee",
-    "prefer_related_applications": false
-  }
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "prefer_related_applications": false,
+    "screenshots": [
+        {
+            "src": "./img/supplement-art.png",
+            "sizes": "522x320",
+            "type": "image/png",
+            "label": "Supplement App V1"
+        },
+        {
+            "src": "./img/supplement-art.png",
+            "sizes": "522x320",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Supplement App V1"
+        }
+    ]
+}
