@@ -27,7 +27,7 @@ self.addEventListener('fetch', e => {
     //console.log(`intercepting fetch request for: ${e.request.url}`)
     e.respondWith(
         caches.match(e.request).then(response => {
-            // fetch the request from the network if it is not in the cache
+            // if it is in the cache, fetch the request, or fetch it from the network 
             return response || fetch(e.request);
         })
     )
