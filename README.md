@@ -36,3 +36,7 @@ https://material-web.dev/components/button/#filled-button
    - select field with 3 options
    - switch field
    - submit button (logs values for fields to console)
+
+
+PWA resources
+https://www.youtube.com/watch?v=WbbAPfDVqfY

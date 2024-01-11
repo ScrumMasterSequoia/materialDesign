@@ -10,10 +10,8 @@ import '@material/web/select/select-option.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/icon-button.js';
 import '@material/web/button/elevated-button.js';
-// added these
 import '@material/web/menu/menu.js';
 // import '@material/web/popover/popover.js';
-
 
 
 // code in this file can be added to the bundle.js file after the command 
@@ -41,4 +39,14 @@ loginForm.addEventListener("submit", (e) => {
   const menuEl = document.body.querySelector('#usage-popover');
 
   anchorEl.addEventListener('click', () => { menuEl.open = !menuEl.open; });
-// after adding an import DON'T FORGET TO RUN THE ROLLUP SCRIPT
+
+if("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then(registration => {
+        console.log("index.js - SW Registered!");
+        console.log(registration);
+    }).catch(error => {
+        console.log("SW Registration Failed!"+error);
+    });
+}
+
+// after changing this file, DON'T FORGET TO RUN THE ROLLUP SCRIPT IN THE TERMINAL: $ npm run rollup

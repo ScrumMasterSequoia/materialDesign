@@ -77,6 +77,12 @@
     --hover-color: #606060;
     --pressed-color: #777777;
 }
+
+img {
+    max-width: 100%;
+    display: block;
+  }
+
 .body{
     background: var(--md-sys-color-background);
 }

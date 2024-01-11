@@ -7475,7 +7475,6 @@ MdElevatedButton = __decorate([
 // import '@material/web/popover/popover.js';
 
 
-
 // code in this file can be added to the bundle.js file after the command 
 // rollup, to add this functionality. This is merely a placeholder file, because 
 // this code gets deleted from the bundle.js file after the command rollup.
@@ -7501,4 +7500,14 @@ loginForm.addEventListener("submit", (e) => {
   const menuEl = document.body.querySelector('#usage-popover');
 
   anchorEl.addEventListener('click', () => { menuEl.open = !menuEl.open; });
-// after adding an import DON'T FORGET TO RUN THE ROLLUP SCRIPT
+
+if("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then(registration => {
+        console.log("index.js - SW Registered!");
+        console.log(registration);
+    }).catch(error => {
+        console.log("SW Registration Failed!"+error);
+    });
+}
+
+// after changing this file, DON'T FORGET TO RUN THE ROLLUP SCRIPT IN THE TERMINAL: $ npm run rollup
