@@ -1,3 +1,5 @@
+// !!! after changing this file, DON'T FORGET TO RUN THE ROLLUP SCRIPT IN THE TERMINAL: $ npm run rollup
+
 import '@material/web/button/filled-button.js';
 import '@material/web/button/outlined-button.js';
 import '@material/web/button/text-button.js';
@@ -13,11 +15,6 @@ import '@material/web/button/elevated-button.js';
 import '@material/web/menu/menu.js';
 // import '@material/web/popover/popover.js';
 
-
-// code in this file can be added to the bundle.js file after the command 
-// rollup, to add this functionality. This is merely a placeholder file, because 
-// this code gets deleted from the bundle.js file after the command rollup.
-
 let loginForm = document.getElementById('submit-form');
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -27,25 +24,25 @@ loginForm.addEventListener("submit", (e) => {
     let subscribed = document.querySelector('#subscribe-checkbox').checked;
     let selectHealthOptions = document.getElementById('select-health-options').value;
     let allergySwitch = document.getElementById('allergy-switch').selected;
-    
+
     console.log('name: = ', name);
     console.log('email: = ', email);
     console.log('subscribed: = ', subscribed);
     console.log('selectHealthOptions: = ', selectHealthOptions);
     console.log('allergySwitch: = ', allergySwitch);
-  });
+});
 
-  const anchorEl = document.body.querySelector('#usage-popover-anchor');
-  const menuEl = document.body.querySelector('#usage-popover');
+const anchorEl = document.body.querySelector('#usage-popover-anchor');
+const menuEl = document.body.querySelector('#usage-popover');
 
-  anchorEl.addEventListener('click', () => { menuEl.open = !menuEl.open; });
+anchorEl.addEventListener('click', () => { menuEl.open = !menuEl.open; });
 
-if("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").then(registration => {
         console.log("index.js - SW Registered!");
         console.log(registration);
     }).catch(error => {
-        console.log("SW Registration Failed!"+error);
+        console.log("SW Registration Failed!" + error);
     });
 }
 

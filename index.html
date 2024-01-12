@@ -1,203 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- from here: added these meta (and link) tags to make the website behave like a PWA (Progressive Web Application) when downloaded on IOS or Android -->
-      <!-- from: https://www.modyo.com/developer-tips/how-to-enhance-your-pwa-with-html-tags-for-ios-and-android  -->
-      
-      <link rel="manifest" href="manifest.json">
-      <meta name="theme-color" content="#000000">
-      <meta name="mobile-web-app-capable" content="yes">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-mobile-web-app-status-bar" content="#000000">
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-      <meta name="apple-mobile-web-app-title" content="Supplement App V1">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-touch-startup-image" content="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
-      <meta name="apple-touch-fullscreen" content="yes">
-      <link rel="apple-touch-icon" href="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="description">
+  <title>V1</title>
+  <link rel="stylesheet" type="text/css" href="default.css">
+  <link rel="icon" type="image/svg+xml" href="https://supplement-app-bucket.s3.amazonaws.com/favicon.ico" />
 
-      <!-- from copilot -->
-      <link rel="mask-icon" href="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png" color="#000000">
-      <meta name="msapplication-TileImage" content="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
-      <meta name="msapplication-TileColor" content="#000000">
+  <!-- PWA (Progressive Web Application) tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Supplement App V1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-startup-image" content="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <link rel="apple-touch-icon" href="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
+  <link rel="mask-icon" href="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png" color="#000000">
+  <meta name="msapplication-TileImage" content="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
+  <meta name="msapplication-TileColor" content="#000000">
 
-      <meta name="description" content="description">
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://supplement-app-v1.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Supplement App V1">
+  <meta property="og:description" content="Supplement app description here">
+  <meta property="og:image" content="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
 
-      <!-- Facebook Meta Tags -->
-      <meta property="og:url" content="https://supplement-app-v1.netlify.app/">
-      <meta property="og:type" content="website">
-      <meta property="og:title" content="Supplement App V1">
-      <meta property="og:description" content="Facebook description"> 
-      <meta property="og:image" content="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="supplement-app-v1.netlify.app">
+  <meta property="twitter:url" content="https://supplement-app-v1.netlify.app/">
+  <meta name="twitter:title" content="Supplement App V1">
+  <meta name="twitter:description" content="Supplement app description here">
+  <meta name="twitter:image" content="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
+</head>
 
-      <!-- Twitter Meta Tags -->
-      <meta name="twitter:card" content="summary_large_image">
-      <meta property="twitter:domain" content="supplement-app-v1.netlify.app">
-      <meta property="twitter:url" content="https://supplement-app-v1.netlify.app/">
-      <meta name="twitter:title" content="Supplement App V1">
-      <meta name="twitter:description" content="Twitter description">
-      <meta name="twitter:image" content="https://supplement-app-bucket.s3.amazonaws.com/img/icon152.png">
+<body class="body">
 
-      <title>V1</title>
-      <link rel="stylesheet" type="text/css" href="default.css">
-      <link rel="icon" type="image/svg+xml" href="https://supplement-app-bucket.s3.amazonaws.com/favicon.ico" />
+  <div class="header">
 
-  </head>
-  <body class="body">
+    <span style="position: absolute;">
 
-    <div class="header">
-
-      <span style="position: absolute;">
-                
-          <md-filled-button class="menu-button" id="usage-popover-anchor">
-            <md-icon style="display: block;">
-              menu
-            </md-icon>
-          </md-filled--button>
-               
-      <md-menu positioning="popover" id="usage-popover" anchor="usage-popover-anchor">
-        <md-menu-item positioning="popover">
-          <md-text-button slot="headline">About Us</md-text-button>
-        </md-menu-item>
-        <md-menu-item positioning="popover">
-          <md-text-button slot="headline">Catalog</md-text-button>
-        </md-menu-item>
-        <md-menu-item positioning="popover">
-          <md-text-button slot="headline">Contact Us</md-text-button>
-        </md-menu-item>
-      </md-menu>
-    </span>
-      
-      <md-filled-text-field class="search-bar" id="search-bar" type="search" name="search" label="search"></md-filled-text-field>
-        <!-- <md-filled-button class="search-button" type="submit" >
-          <md-icon class="icons">
-            search
-          </md-icon>
-        </md-filled-button> -->
-      
-
-      <md-filled-button class="notification-button" type="pointer" >
-        <md-icon>
-          notifications_unread
+      <md-filled-button class="menu-button" id="usage-popover-anchor">
+        <md-icon style="display: block;">
+          menu
         </md-icon>
-      </md-filled-button>
-  
-    </div>  
+        </md-filled--button>
 
-    <!-- menu icon -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <!-- search icon -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!-- bell with unread notification icon -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <!-- bell notification icon : we need to dynamically set the icon based on new notifications -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <!-- this popover keyword here is not actually being imported and used as a popover. See -->
+        <md-menu id="usage-popover" anchor="usage-popover-anchor">
+          <md-menu-item>
+            <md-text-button slot="headline">About Us</md-text-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-text-button slot="headline">Catalog</md-text-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-text-button slot="headline">Contact Us</md-text-button>
+          </md-menu-item>
+        </md-menu>
+    </span>
 
-    <br><br><br><br>
+    <md-filled-text-field class="search-bar" id="search-bar" type="search" name="search" label="search">
+    </md-filled-text-field>
 
-    <div class="featured-content-container">
-        <label class="label" style="text-align: center;">Featured</label>
-        <div class="post-wrapper">
-            <div>
-                <div class="post">
-                    <img class="thumbnail" src="https://supplement-app-bucket.s3.amazonaws.com/img/supplement-art.png">
-                    <div class="post-preview">
-                        <h6 class="post-title">Vitamin B12</h6>
-                        <p class="post-intro">Helps keep nerve and blood cells healthy, make DNA and prevent anemia</p>
-                        <button class="post-button" href="#">Learn More</button>
-                    </div>
-                </div>
-            </div>
+    <md-filled-button class="notification-button" type="pointer">
+      <md-icon>
+        notifications_unread
+      </md-icon>
+    </md-filled-button>
 
-            <div>
-                <div class="post">
-                    <img class="thumbnail" src="https://supplement-app-bucket.s3.amazonaws.com/img/supplement-art.png">
-                    <div class="post-preview">
-                        <h6 class="post-title">Fish Oil</h6>
-                        <p class="post-intro">Omega-3 fatty acids are vital to your heart and brain health</p>
-                        <button class="post-button" href="#">Learn More</button>
-                    </div>
-                </div>
-            </div>
+  </div>
 
-            <div>
-                <div class="post">
-                    <img class="thumbnail" src="https://supplement-app-bucket.s3.amazonaws.com/img/supplement-art.png">
-                    <div class="post-preview">
-                        <h6 class="post-title">Vitamin B12</h6>
-                        <p class="post-intro">Helps keep nerve and blood cells healthy, make DNA and prevent anemia</p>
-                        <button class="post-button" href="#">Learn More</button>
-                    </div>
-                </div>
-            </div>
+  <!-- menu icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <!-- search icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- bell with unread notification icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <!-- bell notification icon : we need to dynamically set the icon based on new notifications -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-            <div>
-                <div class="post">
-                    <img class="thumbnail" src="https://supplement-app-bucket.s3.amazonaws.com/img/supplement-art.png">
-                    <div class="post-preview">
-                        <h6 class="post-title">Fish Oil</h6>
-                        <p class="post-intro">Omega-3 fatty acids are vital to your heart and brain health</p>
-                        <button class="post-button" href="#">Learn More</button>
-                      </div>
-                </div>
-            </div>
+  <br><br><br><br>    <!-- check on these. Should be unnecessary due to the status bar safe area -->
 
+  <div class="featured-content-container">
+    <label class="label" style="text-align: center;">Featured</label>
+    <div class="post-wrapper">
+      <div>
+        <div class="post">
+          <img class="thumbnail" src="https://supplement-app-bucket.s3.amazonaws.com/img/supplement-art.png">
+          <div class="post-preview">
+            <h6 class="post-title">Vitamin B12</h6>
+            <p class="post-intro">Helps keep nerve and blood cells healthy, make DNA and prevent anemia</p>
+            <button class="post-button" href="#" type="pointer">Learn More</button>
+          </div>
         </div>
+      </div>
+
+      <div>
+        <div class="post">
+          <img class="thumbnail" src="https://supplement-app-bucket.s3.amazonaws.com/img/supplement-art.png">
+          <div class="post-preview">
+            <h6 class="post-title">Fish Oil</h6>
+            <p class="post-intro">Omega-3 fatty acids are vital to your heart and brain health</p>
+            <button class="post-button" href="#" type="pointer">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="post">
+          <img class="thumbnail" src="https://supplement-app-bucket.s3.amazonaws.com/img/supplement-art.png">
+          <div class="post-preview">
+            <h6 class="post-title">Vitamin B12</h6>
+            <p class="post-intro">Helps keep nerve and blood cells healthy, make DNA and prevent anemia</p>
+            <button class="post-button" href="#" type="pointer">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="post">
+          <img class="thumbnail" src="https://supplement-app-bucket.s3.amazonaws.com/img/supplement-art.png">
+          <div class="post-preview">
+            <h6 class="post-title">Fish Oil</h6>
+            <p class="post-intro">Omega-3 fatty acids are vital to your heart and brain health</p>
+            <button class="post-button" href="#" type="pointer">Learn More</button>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-    <form id="submit-form" name="form" autocomplete="on">
-      <label style="display: block;" class="label">Fill out the form below and we will reach out to you!</label> <br>
+  <form id="submit-form" name="form" autocomplete="on">
+    <label style="display: block;" class="label">Fill out the form below and we will reach out to you!</label> <br>
 
-      <md-outlined-text-field id="name" label="First and Last Name" type="text" required> 
-        <label for="name"><input type="text"> </input></label>
-      </md-outlined-text-field>
-      <br><br>
+    <md-outlined-text-field id="name" label="First and Last Name" type="text" required>
+      <label for="name"><input type="text"> </input></label>
+    </md-outlined-text-field>
+    <br><br>
 
-      <md-outlined-text-field id="email" label="Email" type="email" required>  
-          <label for="email"><input type="email"> </input></label>
-      </md-outlined-text-field>
-      <br><br>
-      
-      <md-checkbox id="subscribe-checkbox" name="subscribe"><input type="" id="" name="" value=""> </input></md-checkbox>
-      <label for="subscribe-checkbox"> Subscribe </label>
-      
-      <br><br>
-  
-      <label for="select-health-options">What type of nutrition are you most interested in?</label> <br><br>
-      <md-filled-select id="select-health-options">
-        <md-select-option selected value="Heart">
-          <div slot="headline">Heart</div>
-        </md-select-option>
-        <md-select-option value="Brain">
-          <div slot="headline">Brain</div>
-        </md-select-option>
-        <md-select-option value="Skin and Hair">
-          <div slot="headline">Skin and Hair</div>
-        </md-select-option>
-        <md-select-option value="Digestive">
-          <div slot="headline">Digestive</div>
-        </md-select-option>
-        <md-select-option value="Immune System">
-          <div slot="headline">Immune System</div>
-        </md-select-option>
-      </md-filled-select>
-      <br><br>
-  
-      <label for="allergy-switch">Accept cookies?</label> <br>
-      <label>no / yes</label> <br>
-      <md-switch id="allergy-switch"></md-switch>
-      <br><br>
+    <md-outlined-text-field id="email" label="Email" type="email" required>
+      <label for="email"><input type="email"> </input></label>
+    </md-outlined-text-field>
+    <br><br>
 
-      <md-text-button style="padding-top: 0.6em;" type="reset">Reset</md-text-button>
-      <md-outlined-button  style="padding-top: 0.6em;" type="submit">Submit</md-outlined-button>
+    <md-checkbox id="subscribe-checkbox" name="subscribe"><input type="" id="" name="" value=""> </input></md-checkbox>
+    <label for="subscribe-checkbox"> Subscribe </label>
 
-    </form>
+    <br><br>
 
-  </body>
+    <label for="select-health-options">What type of nutrition are you most interested in?</label> <br><br>
+    <md-filled-select id="select-health-options" type="pointer">
+      <md-select-option selected value="Heart">
+        <div slot="headline">Heart</div>
+      </md-select-option>
+      <md-select-option value="Brain">
+        <div slot="headline">Brain</div>
+      </md-select-option>
+      <md-select-option value="Skin and Hair">
+        <div slot="headline">Skin and Hair</div>
+      </md-select-option>
+      <md-select-option value="Digestive">
+        <div slot="headline">Digestive</div>
+      </md-select-option>
+      <md-select-option value="Immune System">
+        <div slot="headline">Immune System</div>
+      </md-select-option>
+    </md-filled-select>
+    <br><br>
 
-  <script src="./bundle.js"></script>
+    <label for="allergy-switch">Accept cookies?</label> <br>
+    <label>no / yes</label> <br>
+    <md-switch id="allergy-switch"></md-switch>
+    <br><br>
+
+    <md-text-button style="padding-top: 0.6em;" type="reset">Reset</md-text-button>
+    <md-outlined-button style="padding-top: 0.6em;" type="submit">Submit</md-outlined-button>
+
+  </form>
+
+</body>
+
+<script src="./bundle.js"></script>
 
 </html>
