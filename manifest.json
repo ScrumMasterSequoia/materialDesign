@@ -25,6 +25,16 @@
             "src": "/img/icon512.png",
             "sizes": "512x512",
             "type": "image/png"
+        },
+        {
+            "src": "./img/supplement-art.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/twitter508x256.png",
+            "sizes": "384x384",
+            "type": "image/png"
         }
     ],
     "orientation": "portrait-primary",
