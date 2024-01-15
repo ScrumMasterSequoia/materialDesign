@@ -288,6 +288,6 @@ input:focus::placeholder {
     }
 
     .search-bar {
-        width: 220px;
+        width: 200px;
     }
 }
